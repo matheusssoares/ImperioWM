@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ControllerService } from 'src/app/services/controller.service';
 import { GeralService } from 'src/app/services/geral.service';
-
 @Component({
   selector: 'app-funcionario',
   templateUrl: './funcionario.page.html',
@@ -26,9 +25,9 @@ export class FuncionarioPage implements OnInit {
     });
 
     load.present();
-    const data = this.getDataById();
+    const data = await this.getDataById();
     this.dados = data;
-    console.log(this.dados);
+    console.log(data);
     
     try {
       load.dismiss();
