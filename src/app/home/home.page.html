@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true" color="dark">
+  <ion-grid>
+      <ion-row class="ion-text-center">
+          <ion-col>
+              <div class="logo">
+                  <img src="../../assets/imgs/logo-imperio.jpeg" alt="Logo império WM">
+              </div>
+          </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding">
+          <ion-col>
+              <div class="form">
+                  <ion-row>
+                      <ion-col>
+                          <ion-label class="ion-padding-left">E-mail</ion-label>
+                          <ion-item class="ion-margin-bottom" color="light">
+                              <ion-input></ion-input>
+                          </ion-item>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col>
+                          <ion-label class="ion-padding-left">Senha</ion-label>
+                          <ion-item class="ion-margin-bottom" color="light">
+                              <ion-input></ion-input>
+                          </ion-item>
+                      </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                      <ion-col>
+                          <p class="margin-esqueci font-s-12 ion-text-end">Esqueci minha Senha</p>                            
+                      </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                      <ion-col>
+                          <ion-button color="warning" (click)="onClick()" expand="block" shape="round">
+                              Entrar
+                          </ion-button>
+                      </ion-col>
+                  </ion-row>
+              </div>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

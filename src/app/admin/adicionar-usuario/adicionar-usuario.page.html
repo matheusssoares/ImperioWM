@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <app-header-admin [back]="true" [title]="'Adicionar usuários'"></app-header-admin>
+</ion-header>
+
+
+<ion-content>
+  <div class="content width-100 ion-padding">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <ion-list class="width-100">
+        <ion-row>
+          <ion-item lines="full" class="width-100">
+            <ion-label position="floating">Nome Completo</ion-label>
+            <ion-input class="width-100" type="text" formControlName="nome"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item lines="full" class="width-100">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item lines="full" class="width-100">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="senha"></ion-input>
+          </ion-item>
+        </ion-row>
+      </ion-list>
+
+      <ion-row style="margin-top: -10px">
+        <ion-col size="12">
+          <ion-button type="submit" [disabled]="registerForm.invalid" color="primary" class="size-45" expand="block"
+            shape="round">
+            Salvar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

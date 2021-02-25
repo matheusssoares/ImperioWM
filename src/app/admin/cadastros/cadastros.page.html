@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <app-header-admin [back]="false" [title]="'Cadastros'"></app-header-admin>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="open('clientes')" lines="full" class="ion-text-uppercase">
+      <ion-icon slot="start" name="people-outline"></ion-icon>
+      <ion-label>Clientes</ion-label>
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item (click)="open('fornecedores')" lines="full" class="ion-text-uppercase">
+      <ion-icon slot="start" name="shirt-outline"></ion-icon>
+      <ion-label>Fornecedores</ion-label>
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-item>
+    
+    <ion-item (click)="open('categorias')" lines="full" class="ion-text-uppercase">
+      <ion-icon slot="start" name="pricetag-outline"></ion-icon>
+      <ion-label>Categorias</ion-label>
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-item>
+    
+    <ion-item (click)="open('produtos')" lines="full" class="ion-text-uppercase">
+      <ion-icon slot="start" name="barcode-outline"></ion-icon>
+      <ion-label>Produtos</ion-label>
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-item>
+    
+    <ion-item (click)="open('funcionarios')" lines="full" class="ion-text-uppercase">
+      <ion-icon slot="start" name="bag-check-outline"></ion-icon>
+      <ion-label>Funcionários</ion-label>
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-item>
+    <ion-item (click)="open('usuarios')" lines="full" class="ion-text-uppercase">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>Usuários</ion-label>
+      <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

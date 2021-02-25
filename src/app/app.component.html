@@ -1,0 +1,58 @@
+<ion-app>
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-bg">
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <img src="../assets/imgs/logo-imperio.jpeg" alt="">
+          <ion-label>
+            <h2>Roger Waters</h2>
+            <p>rogerwaters@gmail.com</p>
+          </ion-label>
+        </div>
+        <div class="icon-logout">
+          <ion-button>
+            <ion-icon slot="icon-only" name="power"></ion-icon>
+          </ion-button>
+        </div>
+
+        <div class="class-itens">
+          <ion-list class="menu-itens" lines="none">
+            <ion-item (click)="toggle()" routerLink="admin/dashboard" routerLinkActive="active">
+              <ion-icon name="home"></ion-icon> Dashboard
+            </ion-item>
+
+            <ion-item (click)="toggle()" routerLink="admin/cadastros" routerLinkActive="active">
+              <ion-icon name="apps"></ion-icon> Cadastros
+            </ion-item>
+
+            <ion-item (click)="toggle()" routerLink="admin/estoque" routerLinkActive="active">
+              <ion-icon name="cube"></ion-icon> Estoque
+            </ion-item>
+
+            <ion-item (click)="toggle()" routerLink="admin/vendas" routerLinkActive="active">
+              <ion-icon name="storefront"></ion-icon> Vendas
+            </ion-item>
+
+            <ion-item (click)="toggle()" routerLink="admin/financeiro" routerLinkActive="active">
+              <ion-icon name="card"></ion-icon> Financeiro
+            </ion-item>
+
+            <ion-item (click)="toggle()" routerLink="admin/relatorios" routerLinkActive="active">
+              <ion-icon name="bar-chart"></ion-icon> Relatórios
+            </ion-item>
+
+            <ion-item (click)="toggle()" routerLink="admin/configuracoes" routerLinkActive="active">
+              <ion-icon name="settings"></ion-icon> Configurações
+            </ion-item>
+
+           <!--  <ion-item (click)="toggle()" routerLink="admin/funcionarios" routerLinkActive="active">
+              <ion-icon name="people"></ion-icon> Funcionários
+            </ion-item> -->
+          </ion-list>
+        </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

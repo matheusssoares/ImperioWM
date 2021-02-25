@@ -1,0 +1,25 @@
+ion-toolbar {
+    --min-height: 80px;
+    
+    ion-menu-button {
+      font-size: 45px !important;
+    }
+    
+    ion-fab-button {
+      --background: rgb(34, 34, 34);
+    }
+    .btn-size-notifications {
+      height: 46px;
+      width: 46px;
+      margin-top: 10px;
+    }
+  
+    .btn-badge-notification {
+      position: absolute;
+      right: -4px;
+      top: 7px;
+      border-radius: 100%;
+      min-width: 20px;
+      min-height: 20px;
+    }
+  }

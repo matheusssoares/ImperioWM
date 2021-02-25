@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <app-header-admin [back]="true" [title]="'Adicionar Funcionários'"></app-header-admin>
+</ion-header>
+
+<ion-content>
+  <div class="content width-100 ion-padding">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <ion-list class="width-100">
+        <ion-row>
+          <ion-item lines="full" class="width-100">
+            <ion-label position="floating">Nome Completo</ion-label>
+            <ion-input class="width-100" type="text" formControlName="nome"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item lines="full" class="width-100">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-item lines="full" class="width-100">
+              <ion-label position="floating">RG</ion-label>
+              <ion-input type="number" formControlName="rg" [brmasker]="{len:8, userCaracters: true}"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-item lines="full" class="width-100">
+              <ion-label position="floating">CPF</ion-label>
+              <ion-input type="text" formControlName="cpf" [brmasker]="{ person: true}"></ion-input>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-item lines="full" class="width-100">
+              <ion-label position="floating">Sexo</ion-label>
+              <ion-select formControlName="sexo" placeholder="Selecione" okText="Ok" cancelText="Cancelar">
+                <ion-select-option value="F">FEMININO</ion-select-option>
+                <ion-select-option value="M">MASCULINO</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-item lines="full" class="width-100">
+              <ion-label position="floating">Data de Nascimento</ion-label>
+              <ion-datetime formControlName="dataNascimento" doneText="Selecionar" cancelText="Cancelar"
+                displayFormat="DD/MM/YYYY"></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-item lines="full" class="width-100">
+            <ion-label position="floating">WhatsApp</ion-label>
+            <ion-input type="text" formControlName="whatsapp" [brmasker]="{phone: true}"></ion-input>
+          </ion-item>
+
+        </ion-row>
+
+      </ion-list>
+
+      <ion-row style="margin-top: -10px">
+        <ion-col size="12">
+          <ion-button type="submit" [disabled]="registerForm.invalid" color="primary" class="size-45" expand="block"
+            shape="round">
+            Salvar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+
+</ion-content>

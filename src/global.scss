@@ -1,0 +1,90 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+//color-client
+.ion-color-client {
+    --ion-color-base: var(--ion-color-client);
+    --ion-color-base-rgb: var(--ion-color-client-rgb);
+    --ion-color-contrast: var(--ion-color-client-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-client-contrast-rgb);
+    --ion-color-shade: var(--ion-color-client-shade);
+    --ion-color-tint: var(--ion-color-client-tint);
+}
+
+//font-oswald
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+//padding
+.ion-padding-left {
+    margin-left: 20px;
+}
+
+//fonts
+.font-s-12 {
+    font-size: 12px;
+}
+
+//color-font
+.font-white {
+    color: #FFF;
+}
+.font-warning {
+    color: var(--ion-color-warning);
+}
+
+//margin
+.mg-left-35 {
+    margin-left: 35px;
+}
+
+.mg-n-top-16 {
+    margin-top: -16px;
+}
+
+//align
+.inline-flex {
+    display: inline-flex;
+}
+
+//avatar
+.avatar-icon {
+    border-radius: 50%;
+    border: 1px solid var(--ion-color-warning);
+    padding: 5px;
+}
+//width
+.width-100 {
+    width: 100%;
+}
+
+//sizesize-45button
+.size-45 {
+    height: 45px;
+}

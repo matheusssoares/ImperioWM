@@ -1,0 +1,194 @@
+<ion-header class="ion-no-border">
+  <app-header-admin [back]="true" [title]="'Adicionar Fornecedores'"></app-header-admin>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment [(ngModel)]="seg" (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="gerais">
+            <ion-label>Gerais</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="end">
+            <ion-label>Endereço</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="seg === 'gerais'" class="geral">
+        <ion-row>
+          <ion-avatar class="avatar">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_813879-MLB40796811578_022020-O.jpg">
+            <ion-fab-button (click)="logo()" color="light" style="float: right; margin-top: -50px">
+              <ion-icon name="camera"></ion-icon>
+            </ion-fab-button>
+          </ion-avatar>
+        </ion-row>
+
+        <ion-row class="ion-padding">
+          <ion-list style="width: 100%;">
+            <ion-row>
+              <ion-item lines="full">
+                <ion-label position="floating">CNPJ</ion-label>
+                <ion-input (ionBlur)="buscar_cnpj($event.target.value)" type="text" [brmasker]="{person: true}" formControlName="cnpj"></ion-input>
+              </ion-item>
+            </ion-row>
+            
+            <ion-row>
+              <ion-item lines="full">
+                <ion-label position="floating">Razão Social</ion-label>
+                <ion-input type="text" formControlName="razao"></ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row>
+              <ion-item lines="full">
+                <ion-label position="floating">Nome Fantasia</ion-label>
+                <ion-input type="text" formControlName="fantasia"></ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row>
+              <ion-item lines="full">
+                <ion-label position="floating">Responsável</ion-label>
+                <ion-input type="text" formControlName="responsavel"></ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row>
+              <ion-item lines="full">
+                <ion-label position="floating">E-mail</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="6">
+                <ion-item lines="full">
+                  <ion-label position="floating">WhatsApp</ion-label>
+                  <ion-input type="text" [brmasker]="{phone: true}" formControlName="whatsapp"></ion-input>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6">
+                <ion-item lines="full">
+                  <ion-label position="floating">Contato</ion-label>
+                  <ion-input type="text" [brmasker]="{phone: true}" formControlName="contato_call"></ion-input>
+                </ion-item>
+              </ion-col>             
+            </ion-row>
+
+            <ion-row>
+              <ion-label position="stacked">Descrição</ion-label>
+              <ion-textarea formControlName="desc"></ion-textarea>
+            </ion-row>
+          </ion-list>
+        </ion-row>
+      </div>
+    </form>
+    <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="seg === 'gerais'" class="geral">
+       
+      </div>
+
+      <div *ngIf="seg === 'end'" class="endereco">
+        <ion-row>
+          <ion-col>
+            <ion-button shape="round" expand="block" fill="clear" (click)="location()">
+              <ion-icon slot="start" name="location"></ion-icon>
+              Usar Minha Localização
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 16px;">
+          <ion-col size="6">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">CEP</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input type="text" matInput placeholder="CEP" formControlName="cep">
+                <mat-icon style="color: #92928f;" matSuffix>outlined_flag</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+
+          <ion-col size="6">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">Cidade</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input class="upper" type="text" matInput placeholder="CIDADE" formControlName="cidade">
+                <mat-icon style="color: #92928f;" matSuffix>gps_fixed</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">Endereço</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input type="text" matInput placeholder="ENDEREÇO" formControlName="endereco">
+                <mat-icon style="color: #92928f;" matSuffix>location_searching</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">Número</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input type="text" matInput placeholder="NÚMERO" formControlName="num">
+                <mat-icon style="color: #92928f;" matSuffix>terrain</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+          <ion-col size="6">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">Bairro</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input type="text" matInput placeholder="BAIRRO" formControlName="bairro">
+                <mat-icon style="color: #92928f;" matSuffix>alt_route</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">Complemento</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input type="text" matInput placeholder="COMPLEMENTO" formControlName="complemento">
+                <mat-icon style="color: #92928f;" matSuffix>edit_location</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+
+          <ion-col size="6">
+            <p style="margin-top: -16px;">
+              <ion-label class="margin-left-16 font-principal">Estado</ion-label>
+              <mat-form-field appearance="outline" class="width-100" floatLabel="never">
+                <input class="upper" type="text" matInput placeholder="ESTADO" formControlName="estado">
+                <mat-icon style="color: #92928f;" matSuffix>pin_drop</mat-icon>
+              </mat-form-field>
+            </p>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-row style="margin-top: -10px">
+        <ion-col size="12">
+          <ion-button type="submit" [disabled]="registerForm.invalid" color="secondary" class="size-45" expand="block"
+            shape="round">
+            Salvar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form> -->
+  </ion-grid>
+</ion-content>
