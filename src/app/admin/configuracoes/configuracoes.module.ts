@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -8,6 +8,7 @@ import { ConfiguracoesPageRoutingModule } from './configuracoes-routing.module';
 
 import { ConfiguracoesPage } from './configuracoes.page';
 import { ComponentesGeraisModule } from 'src/app/componentes/componentes-gerais.module';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { ComponentesGeraisModule } from 'src/app/componentes/componentes-gerais.
     FormsModule,
     IonicModule,
     ConfiguracoesPageRoutingModule,
-    ComponentesGeraisModule
+    ComponentesGeraisModule,
+    ReactiveFormsModule,
+    BrMaskerModule
   ],
   declarations: [ConfiguracoesPage]
 })
