@@ -28,4 +28,29 @@ export class ControllerService {
   getdataById(collection, id) {
     return this.db.collection(`${collection}`).doc(`${id}`).valueChanges();
   }
+
+  setUpdate(collection, id, data) {
+    return this.db.collection(collection).doc(id).update(data);
+  }
+
+  atualizar(collection, id, data) {
+    return new Promise((resolve, reject) => {
+      this.setUpdate(collection, id, data).then(() => {
+        resolve(true);
+      }).catch((e) => {
+        console.log(e);
+
+        reject(false);
+        
+      })
+    })
+  }
+
+  receberDataId(collection, id) {
+    return new Promise((resolve) => {
+      this.getdataById(collection, id).subscribe((data: any) => {
+        resolve(data);
+      })
+    })
+  }
 }
